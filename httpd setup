@@ -1,0 +1,12 @@
+- hosts: localhost
+  become: true
+  tasks:
+   - name: Install httpd
+     package:
+       name: httpd
+       state: present
+   - name: Start HTTPD service
+     service:
+       name: httpd
+       state: started
+       enabled: yes
