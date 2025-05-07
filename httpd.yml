@@ -1,12 +1,9 @@
 - hosts: localhost
-  become: true
-  
-  vars:
-    ansible_python_interpreter: /usr/libexec/platform-python
+  become: true  
 
   tasks:
    - name: Install NGINX
-     dnf:
+     package:
        name: nginx
        state: present
    - name: Start Nginx service
