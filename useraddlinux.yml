@@ -5,6 +5,6 @@
   tasks:
     - name: Add user
       user:
-        name: john
+        name: JJ
         state: present
         groups: root
