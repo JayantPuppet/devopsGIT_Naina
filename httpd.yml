@@ -3,10 +3,10 @@
   tasks:
    - name: Install httpd
      package:
-       name: httpd
+       name: nginx
        state: present
    - name: Start HTTPD service
      service:
-       name: httpd
+       name: nginx
        state: started
        enabled: yes
