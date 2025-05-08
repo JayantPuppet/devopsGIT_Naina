@@ -1,38 +1,14 @@
 ---
-- name: Linux Disk Cleanup
+- name: Disk Cleanup
   hosts: all
   become: yes
   tasks:
-    - name: Remove temporary files
+    - name: Remove logdir files
       file:
-        path: /demofile/
+        path: /logdir/
         state: absent
         recurse: yes
 
-    - name: Clear package cache
-      apt:
-        update_cache: yes
-        autoclean: yes
-        autoremove: yes
-      when: ansible_os_family == 'Debian'
-
-    - name: Clear package cache (RedHat)
-      yum:
-        name: '*'
-        state: latest
-        update_cache: yes
-        autoclean: yes
-        autoremove: yes
-      when: ansible_os_family == 'RedHat'
-
-    - name: Clean up log files
-      find:
-        paths:
-          - /logdir/
-        age: 30d
-        recurse: yes
-        patterns:
-          - '*.log'
-      register: old_logs
-
-
+    - name: Clear yum cache (RHEL/CentOS)
+      command: yum clean all
+      when: ansible_os_family == "RedHat"
