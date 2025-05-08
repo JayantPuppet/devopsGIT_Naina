@@ -1,6 +1,6 @@
 ---
 - name: Check CPU and Memory Usage
-  hosts: 10.131.4.179
+  hosts: all
   gather_facts: no
   tasks:
     - name: Gather CPU and Memory Information
