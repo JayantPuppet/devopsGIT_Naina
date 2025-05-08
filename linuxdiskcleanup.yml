@@ -7,7 +7,7 @@
       file:
         path: /logdir/
         state: absent
-        recurse: yes
+        recurse: no
 
     - name: Clear yum cache (RHEL/CentOS)
       command: yum clean all
