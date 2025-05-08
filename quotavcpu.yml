@@ -1,13 +1,15 @@
 ---
-- name: Update VCPU quota
-  hosts: localhost
+- name: Update VCPU quota in Azure
+  hosts: all
   gather_facts: false
   tasks:
-    - name: Set VCPU quota
-      os_quota:
-        cloud: Azure
-        project: myproject
-        vcpu: 10
+    - name: Update VCPU quota
+      azure_rm_quota:
+        resource_group: dfs-webb-rg
+        name: ansible-demo
+        location: Central US (Zone 1)
+        quota:
+          vcpu: 3
       register: quota_result
 
     - name: Display quota result
