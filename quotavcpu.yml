@@ -1,0 +1,15 @@
+---
+- name: Update VCPU quota
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Set VCPU quota
+      os_quota:
+        cloud: Azure
+        project: myproject
+        vcpu: 10
+      register: quota_result
+
+    - name: Display quota result
+      debug:
+        var: quota_result
