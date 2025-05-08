@@ -1,6 +1,6 @@
 ---
 - name: Create a new user
-  hosts: localhost
+  hosts: 10.131.4.179
   become: yes
   tasks:
     - name: Add user
