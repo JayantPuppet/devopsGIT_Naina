@@ -1,6 +1,6 @@
 ---
 - name: Create a new user
-  hosts: 10.131.4.179
+  hosts: all
   become: yes
   tasks:
     - name: Add user
