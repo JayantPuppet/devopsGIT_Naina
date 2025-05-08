@@ -5,7 +5,7 @@
   tasks:
     - name: Remove temporary files
       file:
-        path: /demofile
+        path: /demofile/
         state: absent
         recurse: yes
 
@@ -28,7 +28,7 @@
     - name: Clean up log files
       find:
         paths:
-          - /logdir
+          - /logdir/
         age: 30d
         recurse: yes
         patterns:
