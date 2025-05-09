@@ -1,0 +1,16 @@
+---
+- name: Remove only files in a directory
+  hosts: all
+  become: yes
+  tasks:
+    - name: Find files in the directory
+      find:
+        paths: /path/to/directory
+        file_type: file
+      register: files_to_remove
+ 
+    - name: Remove files
+      file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ files_to_remove.files }}"
