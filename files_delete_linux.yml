@@ -5,7 +5,7 @@
   tasks:
     - name: Find files in the directory
       find:
-        paths: /path/to/directory
+        paths: /logdir
         file_type: file
       register: files_to_remove
  
