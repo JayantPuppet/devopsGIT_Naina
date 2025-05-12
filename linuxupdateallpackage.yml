@@ -1,0 +1,14 @@
+---
+- name: Patching Linux System
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update all packages to the latest version
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Reboot the system if kernel was updated
+      reboot:
+        when: "'kernel' in ansible_facts.packages"
