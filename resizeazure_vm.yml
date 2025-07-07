@@ -17,7 +17,7 @@
         name: "{{ vm_name }}"
         started: no
       environment:
-        AZURE_SUBSCRIPTION_ID: "64c8eb52-f677-4a21-b89a-820a5f9bd5a8"
+        AZURE_SUBSCRIPTION_ID: "c8eb52-f677-4a21-b89a-820a5f9bd5a8"
         AZURE_CLIENT_ID: "cc330866-d3bf-48a0-ae84-4079d48eb534"
         AZURE_SECRET: "WHU8Q~YliUYmnVhd6CRr3ABFZyf8_ULJf8CCja-N"
         AZURE_TENANT: "189de737-c93a-4f5a-8b68-6f4ca9941912"
