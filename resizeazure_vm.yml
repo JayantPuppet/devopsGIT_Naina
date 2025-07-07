@@ -10,11 +10,11 @@
     new_vm_size: "Standard_DS2_v2"  # Change to desired size
 
   tasks:
-    - name: Stop the VM before resizing
-      azure_rm_virtualmachine:
-        resource_group: "{{ resource_group }}"
-        name: "{{ vm_name }}"
-        started: no
+    # - name: Stop the VM before resizing
+    #   azure_rm_virtualmachine:
+    #     resource_group: "{{ resource_group }}"
+    #     name: "{{ vm_name }}"
+    #     started: no
 
     - name: Resize the VM
       azure_rm_virtualmachine:
