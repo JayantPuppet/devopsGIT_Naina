@@ -16,14 +16,6 @@
         resource_group: "{{ resource_group }}"
         name: "{{ vm_name }}"
         started: no
-      - name: Example playbook to use Azure credentials
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Create a resource group
-      azure_rm_resourcegroup:
-        name: myResourceGroup
-        location: eastus
       environment:
         AZURE_SUBSCRIPTION_ID: "64c8eb52-f677-4a21-b89a-820a5f9bd5a8"
         AZURE_CLIENT_ID: "cc330866-d3bf-48a0-ae84-4079d48eb534"
