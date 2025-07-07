@@ -8,7 +8,7 @@
     ansible_python_interpreter: /usr/bin/python3
     resource_group: "dfs-webb-rg"
     vm_name: "ansible-demo"
-    new_vm_size: "Standard_DS2_v3"  # Change to desired size
+    new_vm_size: "Standard_D2s_v3"  # Change to desired size
 
   tasks:
     - name: Stop the VM before resizing
