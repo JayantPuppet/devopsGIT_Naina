@@ -5,6 +5,7 @@
   gather_facts: no
 
   vars:
+    ansible_python_interpreter: /usr/bin/python3
     resource_group: "dfs-webb-rg"
     vm_name: "ansible-demo"
     new_vm_size: "Standard_DS2_v2"  # Change to desired size
