@@ -1,0 +1,30 @@
+---
+- name: Resize Azure VM
+  hosts: all
+  connection: local
+  gather_facts: no
+
+  vars:
+    resource_group: "dfs-webb-rg"
+    vm_name: "ansible-demo"
+    new_vm_size: "Standard_DS2_v2"  # Change to desired size
+
+  tasks:
+    - name: Stop the VM before resizing
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vm_name }}"
+        started: no
+
+    - name: Resize the VM
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vm_name }}"
+        vm_size: "{{ new_vm_size }}"
+        started: no
+
+    - name: Start the VM after resizing
+      azure_rm_virtualmachine:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vm_name }}"
+        started: yes
